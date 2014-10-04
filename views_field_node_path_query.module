@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Main file of Views field node path with query module.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_field_node_path_query_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function views_field_node_path_query_views_data_alter(&$data) {
+  $data['node']['path']['field']['handler'] = 'views_handler_field_node_path_query';
+}
